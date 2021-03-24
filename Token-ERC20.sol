@@ -1,9 +1,10 @@
 /* Token ERC20 - Smart Contract  */
+/* SPDX-License-Identifier: UNLICENSED */
     
-pragma solidity ^0.5.2;
+pragma solidity ^0.8.0;
     
-import "github.com/OpenZeppelin/openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
-import "github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "github.com/OpenZeppelin/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol";
+import "github.com/OpenZeppelin/openzeppelin-contracts/contracts/utils/math/SafeMath.sol";
 
 contract Token is IERC20 {
     using SafeMath for uint256;
@@ -19,7 +20,7 @@ contract Token is IERC20 {
     mapping (address => mapping (address => uint256)) private _allowed;     // Allowances
     
     /* ---  Metodo Constructor ---  */  
-    constructor(string memory _name, string memory _symbol, uint8 _decimals, uint128 _initialTotalSupply) public{
+    constructor(string memory _name, string memory _symbol, uint8 _decimals, uint128 _initialTotalSupply){
         owner = msg.sender;
         name = _name;
         symbol = _symbol;
@@ -32,27 +33,27 @@ contract Token is IERC20 {
     /**
      * @dev Total number of tokens in existence
      */
-    function totalSupply() public view returns (uint256) {
+    function totalSupply() public view override returns (uint256) {
         return _totalSupply;
     }
 
     /**
      * @dev Gets the balance of the specified address.
-     * @param owner The address to query the balance of.
+     * @param _owner The address to query the balance of.
      * @return An uint256 representing the amount owned by the passed address.
      */
-    function balanceOf(address owner) public view returns (uint256) {
-        return _balances[owner];
+    function balanceOf(address _owner) public view override returns (uint256) {
+        return _balances[_owner];
     }
 
     /**
      * @dev Function to check the amount of tokens that an owner allowed to a spender.
-     * @param owner address The address which owns the funds.
+     * @param _owner address The address which owns the funds.
      * @param spender address The address which will spend the funds.
      * @return A uint256 specifying the amount of tokens still available for the spender.
      */
-    function allowance(address owner, address spender) public view returns (uint256) {
-        return _allowed[owner][spender];
+    function allowance(address _owner, address spender) public view override returns (uint256) {
+        return _allowed[_owner][spender];
     }
 
     /**
@@ -60,7 +61,7 @@ contract Token is IERC20 {
      * @param to The address to transfer to.
      * @param value The amount to be transferred.
      */
-    function transfer(address to, uint256 value) public returns (bool) {
+    function transfer(address to, uint256 value) public override returns (bool) {
         _transfer(msg.sender, to, value);
         return true;
     }
@@ -74,7 +75,7 @@ contract Token is IERC20 {
      * @param spender The address which will spend the funds.
      * @param value The amount of tokens to be spent.
      */
-    function approve(address spender, uint256 value) public returns (bool) {
+    function approve(address spender, uint256 value) public override returns (bool) {
         _approve(msg.sender, spender, value);
         return true;
     }
@@ -87,7 +88,7 @@ contract Token is IERC20 {
      * @param to address The address which you want to transfer to
      * @param value uint256 the amount of tokens to be transferred
      */
-    function transferFrom(address from, address to, uint256 value) public returns (bool) {
+    function transferFrom(address from, address to, uint256 value) public override returns (bool) {
         _transfer(from, to, value);
         _approve(from, msg.sender, _allowed[from][msg.sender].sub(value));
         return true;
@@ -168,16 +169,16 @@ contract Token is IERC20 {
 
     /**
      * @dev Approve an address to spend another addresses' tokens.
-     * @param owner The address that owns the tokens.
+     * @param _owner The address that owns the tokens.
      * @param spender The address that will spend the tokens.
      * @param value The number of tokens that can be spent.
      */
-    function _approve(address owner, address spender, uint256 value) internal {
+    function _approve(address _owner, address spender, uint256 value) internal {
         require(spender != address(0));
         require(owner != address(0));
 
-        _allowed[owner][spender] = value;
-        emit Approval(owner, spender, value);
+        _allowed[_owner][spender] = value;
+        emit Approval(_owner, spender, value);
     }
 
     /**
