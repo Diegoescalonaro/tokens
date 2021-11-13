@@ -11,11 +11,11 @@ import "github.com/OpenZeppelin/openzeppelin-contracts/contracts/token/ERC721/IE
 import "github.com/OpenZeppelin/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol";
 // Util para manejar direcciones de Ethereum (address)
 import "github.com/OpenZeppelin/openzeppelin-contracts/contracts/utils/Address.sol";
-// Util para manejar direcciones de Ethereum (address)
+// Util para manejar informacion de contexto de la transaccion (_msgSender y _msgData)
 import "github.com/OpenZeppelin/openzeppelin-contracts/contracts/utils/Context.sol";
 // Util para manejar variables de tipo string y conversiones
 import "github.com/OpenZeppelin/openzeppelin-contracts/contracts/utils/Strings.sol";
-// Estandar ERC165
+// Estandar ERC165 para detectar interfaces que implementan otros Smart Contracts
 import "github.com/OpenZeppelin/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol";
 
 
@@ -422,10 +422,10 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
 
 contract MyERC721Card is ERC721{
     
-    /* --- Atributos del TOKEN (Smart Contract) --- */ 
+    /* --- Propietario del Smart Contract --- */ 
     address public owner;           // token owner
 
-    /* --- Estructura de la CARTA --- */ 
+    /* --- Estructura y atributos de la CARTA: name, level, description, image, type... --- */ 
     struct Card {
         string  name;  // Name of the Card
         uint256 level; // Level of the Card
