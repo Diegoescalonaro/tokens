@@ -448,4 +448,9 @@ contract MyERC721Card is ERC721{
         cards.push(Card(_name, 1));
         _mint(_account, cardId); // Mint a new card
     }
+    
+    /* --- Funcion para obtener el numero total de cartas (tokens únicos) --- */ 
+    function totalSupply() public view returns (uint256) {
+        return cards.length;
+    }
 }
