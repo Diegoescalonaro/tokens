@@ -18,20 +18,20 @@ The Smart Contract `PokemonCollection.sol` implements the basic functionality to
 
 ```
 
-Then you have two ways to mint every NFT:
 - Minting every NFT in a single transaction:
 
 ```js
-safeMint(msg.sender, "1");
+safeMint(<<DESTINATION_ADDRESS>>, "0", "Pikachu.json");
 ```
 
+The Smart Contract `PokemonCollectionAirdrop.sol` implements the basic functionality to deploy an NFT collection and to mint the total amount of NFTs within a transaction in the constructor method.
 
 - Minting all NFTs in the constructor
 
 ```js
     constructor(string memory name_, string memory symbol_) ERC721(name_, symbol_) {
         for (uint i = 0; i <= <XXX>; i++){
-                _safeMint(<DESTINATION AADDRESS>, i);
+                _safeMint(MINT_DESTINATION, i);
         }
     }
 ```
@@ -48,7 +48,7 @@ ipfs://bafybeifaa5x53logldqmhp32jay6j5pob5ictg2yotwrxdzle3rauf4w64/Charmander.pn
 They share the same base path <Images IPFS URL>: `ipfs://bafybeifaa5x53logldqmhp32jay6j5pob5ictg2yotwrxdzle3rauf4w64/`
 
 
-## <NFTs IPFS URL> IPFS URI (CAR / .car
+## <NFTs IPFS URL> IPFS URI (CAR / .car)
 
 Pikachu:    ipfs://bafybeierekdpsansxskq5nyq3ujsugdlmy7fwpaq2rvdvzsnhg5cduezba/1
 Squirtle:   ipfs://bafybeierekdpsansxskq5nyq3ujsugdlmy7fwpaq2rvdvzsnhg5cduezba/2
