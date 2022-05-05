@@ -1,7 +1,7 @@
 # Pokemon Collection Example
 
 ## STEPS TO DEPLOY A NEW COLLECTION OF XXX (>100) NFTS
-1. Create /image /nft folders
+1. Create /image & /nft folders
 2. Add images to /images named from 0 to <XXX> (0.png, 1.png, 2.png)
 3. Publish /images folder to IPFS as CARs. It produces an <Images IPFS URL>
 4. Add metadata JSON files to /nfts folder named from 0 to XXX. Ensure all metadata files link to <Images IPFS URL>
