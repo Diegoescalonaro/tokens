@@ -1,0 +1,43 @@
+{
+    "name": "Pikachu",
+    "description": "Pikachu (Japanese: ピカチュウ Pikachu) is an Electric-type Pokémon introduced in Generation I.",
+    "image": "ipfs://bafybeihd42h5d4xj7gcvhfub3lpoiajl6mbbmrzzugheo5i5cilhcibeta/images/Pikachu.png",
+    "external_url": "https://trustos.telefonica.com",
+    "attributes": [
+        {
+            "trait_type": "Type",
+            "value": "Electric"
+        },
+        {
+            "trait_type": "Color",
+            "value": "Yellow"
+        },
+        {
+            "trait_type": "Personality",
+            "value": "Kind"
+        },
+        {
+            "trait_type": "Generation",
+            "value": 1
+        },
+        {
+            "trait_type": "Level",
+            "value": 2
+        },
+        {
+            "display_type": "boost_number",
+            "trait_type": "Lighning Rod",
+            "value": 60
+        },
+        {
+            "display_type": "boost_percentage",
+            "trait_type": "Catch rate",
+            "value": 35.2
+        },
+        {
+            "display_type": "boost_number",
+            "trait_type": "Stamina Increase",
+            "value": 50
+        }
+    ]
+}
