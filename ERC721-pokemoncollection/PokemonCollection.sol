@@ -18,7 +18,7 @@ contract PokemonCollection is ERC721, ERC721Enumerable, Ownable {
     }
 
     function _baseURI() internal pure override returns (string memory) {
-        return "ipfs://{{IPFS CID}}/nft/";
+        return "ipfs://{{IPFS CID}}/";
     }
 
     /**

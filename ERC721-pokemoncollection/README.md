@@ -3,17 +3,17 @@
 ## STEPS TO DEPLOY A NEW COLLECTION OF XXX (>100) NFTS
 1. Create /image /nft folders
 2. Add images to /images named from 0 to <XXX> (0.png, 1.png, 2.png)
-3. Publish /images folder to IPFS as CARs. It produces an <Images CID>
-4. Add metadata JSON files to /nfts folder named from 0 to XXX. Ensure all metadata files link to <Images CID>
-5. Publish /nft folder to IPFS as CCARs type. It produces an <NFTs CID>
-6. Open REMIX IDE and use <NFTs CID> as base URI in the smart contract code. 
+3. Publish /images folder to IPFS as CARs. It produces an <Images IPFS URL>
+4. Add metadata JSON files to /nfts folder named from 0 to XXX. Ensure all metadata files link to <Images IPFS URL>
+5. Publish /nft folder to IPFS as CCARs type. It produces an <NFTs IPFS URL>
+6. Open REMIX IDE and use <NFTs IPFS URL> as base URI in the smart contract code. 
 7. Set in a environment variable the destination of the NFTs minted <DESTINATION ADDRESS>
 
 The Smart Contract `PokemonCollection.sol` implements the basic functionality to deploy an NFT collection and to mint every NFT based on a base URI:
 
 ```js
     function _baseURI() internal pure override returns (string memory) {
-        return "ipfs://<NFTs CID>/";
+        return "ipfs://<NFTs IPFS URL>/";
     }
 
 ```
@@ -38,25 +38,26 @@ safeMint(msg.sender, "1");
 
 ## Examples: 
 
-## <Images CID>
+## <Images IPFS URL>
 
-ipfs://bafybeictwf4qjsltguxqdpmmuzvp7k6a2vz24amukgje462tqz4h5uzo4i/images/Pikachu.png
-ipfs://bafybeictwf4qjsltguxqdpmmuzvp7k6a2vz24amukgje462tqz4h5uzo4i/images/Squirtle.png
-ipfs://bafybeictwf4qjsltguxqdpmmuzvp7k6a2vz24amukgje462tqz4h5uzo4i/images/Bulbasaur.png
-ipfs://bafybeictwf4qjsltguxqdpmmuzvp7k6a2vz24amukgje462tqz4h5uzo4i/images/Charmander.png
+ipfs://bafybeifaa5x53logldqmhp32jay6j5pob5ictg2yotwrxdzle3rauf4w64/Pikachu.png
+ipfs://bafybeifaa5x53logldqmhp32jay6j5pob5ictg2yotwrxdzle3rauf4w64/Squirtle.png
+ipfs://bafybeifaa5x53logldqmhp32jay6j5pob5ictg2yotwrxdzle3rauf4w64/Bulbasaur.png
+ipfs://bafybeifaa5x53logldqmhp32jay6j5pob5ictg2yotwrxdzle3rauf4w64/Charmander.png
 
-They share the same base path: `ipfs://bafybeictwf4qjsltguxqdpmmuzvp7k6a2vz24amukgje462tqz4h5uzo4i/images/`
+They share the same base path <Images IPFS URL>: `ipfs://bafybeifaa5x53logldqmhp32jay6j5pob5ictg2yotwrxdzle3rauf4w64/`
 
 
-## <NFTs CID> IPFS URI (CAR / .car
+## <NFTs IPFS URL> IPFS URI (CAR / .car
 
 Pikachu:    ipfs://bafybeierekdpsansxskq5nyq3ujsugdlmy7fwpaq2rvdvzsnhg5cduezba/1
 Squirtle:   ipfs://bafybeierekdpsansxskq5nyq3ujsugdlmy7fwpaq2rvdvzsnhg5cduezba/2
 Bulbasaur:  ipfs://bafybeierekdpsansxskq5nyq3ujsugdlmy7fwpaq2rvdvzsnhg5cduezba/3
 Charmander: ipfs://bafybeierekdpsansxskq5nyq3ujsugdlmy7fwpaq2rvdvzsnhg5cduezba/4
 
-They share the same base path <NFTs CID>: `ipfs://bafybeierekdpsansxskq5nyq3ujsugdlmy7fwpaq2rvdvzsnhg5cduezba/`
+They share the same base path <NFTs IPFS URL>: `ipfs://bafybeierekdpsansxskq5nyq3ujsugdlmy7fwpaq2rvdvzsnhg5cduezba/`
 
+IPFS CID <IPFS CID>: `bafybeierekdpsansxskq5nyq3ujsugdlmy7fwpaq2rvdvzsnhg5cduezba`
 
 ## Other Examples
 
