@@ -7,7 +7,12 @@ In this repository you will find different implementations for Ethereum token st
     - Description: Implementation of ERC20 Token Standard 
     - Reference: https://eips.ethereum.org/EIPS/eip-20
 
-- ERC721 (Non-Fungible Token - NFT):
+- ERC721-pokemoncollection (POKEMON COLLECTION NFT):
+    - File: PokemonCollection.sol 
+    - Description: Implementation of ERC721 Non-fungible Token Standard based on Pokemon use case
+    - Reference: https://eips.ethereum.org/EIPS/eip-721
+
+- ERC721-cryptocards (Non-Fungible Token - NFT):
     - File: CryptoCards-ERC721.sol 
     - Description: Implementation of ERC721 Non-fungible Token Standard based on CryptoCards use case
     - Reference: https://eips.ethereum.org/EIPS/eip-721
