@@ -12,9 +12,10 @@ contract PokemonCollection is ERC721, ERC721Enumerable, Ownable {
     address private MINT_DESTINATION = 0xeA508aACcbf5986639708De26927B3bf4B44D36D;
     
     constructor(string memory name_, string memory symbol_) ERC721(name_, symbol_) {
-        for (uint i = 0; i <= 9; i++){
-            _safeMint(MINT_DESTINATION, i);
-        }
+        /* To airdrop the total amount of NFTs (10 NFTs) within the constructor */
+        //for (uint i = 0; i <= 9; i++){
+        //    _safeMint(MINT_DESTINATION, i);
+        //}
     }
 
     function _baseURI() internal pure override returns (string memory) {
