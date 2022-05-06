@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
-contract PokemonCollection is ERC721, ERC721Enumerable, Ownable {
+contract PokemonCollectionAirdrop is ERC721, ERC721Enumerable, Ownable {
     // Optional mapping for token URIs
     mapping(uint256 => string) private _tokenURIs;
 
