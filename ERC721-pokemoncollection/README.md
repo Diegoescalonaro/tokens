@@ -47,8 +47,19 @@ ipfs://bafybeifaa5x53logldqmhp32jay6j5pob5ictg2yotwrxdzle3rauf4w64/Charmander.pn
 
 They share the same base path <Images IPFS URL>: `ipfs://bafybeifaa5x53logldqmhp32jay6j5pob5ictg2yotwrxdzle3rauf4w64/`
 
+## <NFTs IPFS URL>
 
-## <NFTs IPFS URL> IPFS URI (CAR / .car)
+ipfs://bafybeic72sxrbo2qzqbbyfos5zwbgn6bnpos2rwjbzsuaz67plawkh5trm/Pikachu.png
+ipfs://bafybeic72sxrbo2qzqbbyfos5zwbgn6bnpos2rwjbzsuaz67plawkh5trm/Squirtle.png
+ipfs://bafybeic72sxrbo2qzqbbyfos5zwbgn6bnpos2rwjbzsuaz67plawkh5trm/Bulbasaur.png
+ipfs://bafybeic72sxrbo2qzqbbyfos5zwbgn6bnpos2rwjbzsuaz67plawkh5trm/Charmander.png
+
+They share the same base path <Images IPFS URL>: `ipfs://bafybeic72sxrbo2qzqbbyfos5zwbgn6bnpos2rwjbzsuaz67plawkh5trm/`
+
+
+## <NFTs IPFS URL> IPFS URI (CAR / .car) for Airdrop
+
+To do an NFT Airdrop we need to set the name of every JSON file (Pikachu.json, Bulbasaur.json, etc.) as a number, from 0 to 9 (with or without JSON extension: `.json`). Don't know why? Imagine how complex it'd be to run a loop of words (Pikachu, Squirtle, Bulbasaur, etc.) instead of running a loop of numbers (0, 1, 2, etc.). 
 
 Pikachu:    ipfs://bafybeierekdpsansxskq5nyq3ujsugdlmy7fwpaq2rvdvzsnhg5cduezba/1
 Squirtle:   ipfs://bafybeierekdpsansxskq5nyq3ujsugdlmy7fwpaq2rvdvzsnhg5cduezba/2
